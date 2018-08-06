@@ -9,26 +9,26 @@ router.get("/", function(req, res) {
     var hbsObject = {
       burgers: data
     };
-    console.log(hbsObject);
     res.render("index", hbsObject);
   });
 });
 
 router.post("/api/burgers", function(req, res) {
   burger_name = req.body.burger_name;
-  burgers.insertOne(burger_name), function(result) {
+  burgers.insertOne(burger_name, function(result) {
     console.log(result);
-  }
+  });
 });
 
 router.put("/api/burgers/:id", function(req, res) {
-  burgers.updateOne(req.params.id), function(result) {
+  var id = req.body.id
+  burgers.updateOne(id, function(result) {
     if (result.changedRows == 0) {
       return res.status(404).end();
     } else {
       res.status(200).end();
     }
-  }
+  });
 });
 
 

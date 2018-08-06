@@ -1,27 +1,32 @@
 <h1>Eat-Da-Burger!!</h1>
 
+<img src="assets/imgs/pusheen-burger.gif" alt="pusheen burger">
+
 <h2>These burgers are available for nomming!</h2>
 
 <ul>
   {{#each burgers}}
-  <button class="burgers-to-eat"> {{this.burger_name}}
-    {{#unless devoured}}
-    {{/unless}}
+  {{#unless devoured}}
+  <button class="burgers-to-eat" value={{this.id}}> {{this.burger_name}}
     </button>
+        {{/unless}}
   {{/each}}
 </ul>
+
+
 
 <h2>Burgers that have been nommed!</h2>
 
 <ul>
   {{#each burgers}}
+   {{#if devoured}}
   <button class="burgers-eaten">
-    {{#if devoured}}
-    {{/if}}
+    {{this.burger_name}}
     </button>
+    {{/if}}
   {{/each}}
 </ul>
-
+<br>
 <h2>Add a Burger</h2>
 <form class="create-form">
 
@@ -29,6 +34,7 @@
     <label for="burger-add">Burger Name:</label>
     <input type="text" id="burger-add" name="name">
   </div>
-
+<br>
   <button type="submit" id="submit">Add Burger</button>
 </form>
+

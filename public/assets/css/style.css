@@ -1,0 +1,28 @@
+body {
+    background-image: url(../imgs/restaurant.png);
+    font-family: 'Open Sans', sans-serif;
+    text-align: center;
+}
+
+img {
+    height: 200px;
+
+}
+
+.burgers-to-eat {
+    background-color: rgb(252, 158, 77);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+.burgers-eaten {
+    background-color: rgb(218, 82, 82);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}
+
+#submit {
+    background-color: rgb(118, 165, 42);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+}

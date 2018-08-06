@@ -9,10 +9,13 @@ var burgers = {
   },
 
   insertOne: function(burger_name, cb) {
-    orm.insertOne("burgers", ["burger_name"], [burger_name], cb)
+    orm.insertOne("burgers", ["burger_name"], burger_name, function(res) {
+    cb(res)
+    });
   },
   updateOne: function(id, cb) {
-    orm.updateOne("burgers", id, function(res) {
+    condition = "id=" + id;
+    orm.updateOne("burgers", condition, function(res) {
       cb(res);
     });
   },
