@@ -44,6 +44,18 @@ var orm = {
       cb(result);
     });
   },
+
+  updateAll: function(table, condition, cb) {
+    var queryString = "UPDATE " + table;
+    queryString += " SET "
+    queryString += condition;
+    connection.query(queryString, function(err, result) {
+      if (err) {
+        throw err;
+      }
+      cb(result);
+    });
+  },
 };
 
 module.exports = orm;

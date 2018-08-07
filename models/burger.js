@@ -19,6 +19,12 @@ var burgers = {
       cb(res);
     });
   },
+  updateAll: function(devoured, cb) {
+    condition = "devoured= " + devoured;
+    orm.updateAll("burgers", condition, function(res){
+      cb(res);
+    })
+  }
 };
 
 module.exports = burgers;

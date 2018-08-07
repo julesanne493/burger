@@ -1,7 +1,6 @@
 $(function() {
     $(".burgers-to-eat").on("click", function(event) {
       var id = $(this).attr("value");
-      console.log(id);
 
       $.ajax("/api/burgers/" + id, {
         type: "PUT",
@@ -9,7 +8,6 @@ $(function() {
           id: id,
         }
       })
-      console.log("nom")
           location.reload();
     });
   
@@ -25,5 +23,19 @@ $(function() {
       })
           location.reload();
     });
+
+    $("#resetBurgers").on("click", function(event){
+      event.preventDefault();
+
+      $.ajax("/api/burgers/", {
+        type: "PUT",
+        data: {
+          devoured: false,
+        }
+      })
+          location.reload();
+
+
+    })
   
   });
