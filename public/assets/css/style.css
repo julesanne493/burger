@@ -13,12 +13,14 @@ img {
     background-color: rgb(252, 158, 77);
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
+    margin: 5px;
 }
 
 .burgers-eaten {
     background-color: rgb(218, 82, 82);
     font-family: 'Open Sans', sans-serif;
     font-size: 15px;
+    margin: 5px;
 }
 
 #submit {
